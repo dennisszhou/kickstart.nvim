@@ -646,6 +646,22 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
 
+        pyright = {
+          settings = {
+            pyright = {
+              -- Let ruff handle import organization
+              disableOrganizeImports = true,
+            },
+            python = {
+              analysis = {
+                -- Defer all linting to ruff
+                ignore = { '*' },
+              },
+            },
+          },
+        },
+        ruff = {},
+
         stylua = {}, -- Used to format Lua code
 
         -- Special Lua Config, as recommended by neovim help docs
@@ -731,6 +747,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        python = { 'ruff_format' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
