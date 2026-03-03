@@ -159,6 +159,12 @@ vim.o.inccommand = 'split'
 -- Show which line your cursor is on
 vim.o.cursorline = true
 
+vim.opt.guicursor = {
+  'n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100', -- Block in Normal
+  'i-ci-ve:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100', -- Bar in Insert
+  'r-cr:hor20', -- Underline in Replace
+}
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
