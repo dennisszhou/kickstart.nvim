@@ -191,7 +191,6 @@ vim.keymap.set('n', '<C-w>-', '<cmd>sp<CR>', { desc = 'Split window horizontally
 vim.keymap.set('n', '<C-w>|', '<cmd>vsp<CR>', { desc = 'Split window vertically' })
 
 -- Your custom tab management
-vim.keymap.set('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'New tab' })
 vim.keymap.set('n', 'g1', '1gt', { desc = 'Go to tab 1' })
 vim.keymap.set('n', 'g2', '2gt', { desc = 'Go to tab 2' })
 vim.keymap.set('n', 'g3', '3gt', { desc = 'Go to tab 3' })
@@ -202,6 +201,11 @@ vim.keymap.set('n', 'g7', '7gt', { desc = 'Go to tab 7' })
 vim.keymap.set('n', 'g8', '8gt', { desc = 'Go to tab 8' })
 vim.keymap.set('n', 'g9', '9gt', { desc = 'Go to tab 9' })
 vim.keymap.set('n', 'g0', '<cmd>tablast<CR>', { desc = 'Go to last tab' })
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = 'New Tab' })
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close Tab' })
+-- Move to the previous/next tab with H and L
+vim.keymap.set('n', 'H', ':tabprevious<CR>', { silent = true })
+vim.keymap.set('n', 'L', ':tabnext<CR>', { silent = true })
 
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
