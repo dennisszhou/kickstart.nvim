@@ -139,6 +139,9 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- Always show the tabline
+vim.o.showtabline = 2
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -159,6 +162,12 @@ vim.o.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
+-- Your custom indentation settings
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smarttab = true
+
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
@@ -170,6 +179,23 @@ vim.o.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Your custom split management
+vim.keymap.set('n', '<C-w>-', '<cmd>sp<CR>', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<C-w>|', '<cmd>vsp<CR>', { desc = 'Split window vertically' })
+
+-- Your custom tab management
+vim.keymap.set('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'New tab' })
+vim.keymap.set('n', 'g1', '1gt', { desc = 'Go to tab 1' })
+vim.keymap.set('n', 'g2', '2gt', { desc = 'Go to tab 2' })
+vim.keymap.set('n', 'g3', '3gt', { desc = 'Go to tab 3' })
+vim.keymap.set('n', 'g4', '4gt', { desc = 'Go to tab 4' })
+vim.keymap.set('n', 'g5', '5gt', { desc = 'Go to tab 5' })
+vim.keymap.set('n', 'g6', '6gt', { desc = 'Go to tab 6' })
+vim.keymap.set('n', 'g7', '7gt', { desc = 'Go to tab 7' })
+vim.keymap.set('n', 'g8', '8gt', { desc = 'Go to tab 8' })
+vim.keymap.set('n', 'g9', '9gt', { desc = 'Go to tab 9' })
+vim.keymap.set('n', 'g0', '<cmd>tablast<CR>', { desc = 'Go to last tab' })
 
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
