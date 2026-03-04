@@ -187,8 +187,8 @@ vim.o.confirm = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Your custom split management
-vim.keymap.set('n', '<C-w>-', '<cmd>sp<CR>', { desc = 'Split window horizontally' })
-vim.keymap.set('n', '<C-w>|', '<cmd>vsp<CR>', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<C-w>-', '<cmd>new<CR>', { desc = 'New horizontal split' })
+vim.keymap.set('n', '<C-w>|', '<cmd>vnew<CR>', { desc = 'New vertical split' })
 
 -- Your custom tab management
 vim.keymap.set('n', 'g1', '1gt', { desc = 'Go to tab 1' })
@@ -206,6 +206,10 @@ vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close Tab' })
 -- Move to the previous/next tab with H and L
 vim.keymap.set('n', 'H', ':tabprevious<CR>', { silent = true })
 vim.keymap.set('n', 'L', ':tabnext<CR>', { silent = true })
+-- Tmux-style tab navigation (<C-w> prefix)
+vim.keymap.set('n', '<C-w>n', ':tabnext<CR>', { silent = true, desc = 'Next tab' })
+vim.keymap.set('n', '<C-w>p', ':tabprevious<CR>', { silent = true, desc = 'Prev tab' })
+vim.keymap.set('n', '<C-w>c', ':tabnew<CR>', { silent = true, desc = 'New tab' })
 
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
