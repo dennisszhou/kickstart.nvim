@@ -1,7 +1,18 @@
 return {
   'coder/claudecode.nvim',
   dependencies = { 'folke/snacks.nvim' },
-  config = true,
+  config = function()
+    local claude_width = math.max(80, math.floor(vim.o.columns * 0.35))
+    require('claudecode').setup({
+      env = { COLUMNS = tostring(claude_width) },
+      terminal = {
+        snacks_win_opts = {
+          position = 'right',
+          width = claude_width,
+        },
+      },
+    })
+  end,
   keys = {
     { '<leader>c',  nil,                              desc = 'AI/Claude Code' },
     { '<leader>cc', '<cmd>ClaudeCode<cr>',            desc = 'Toggle Claude' },
