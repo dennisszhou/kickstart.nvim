@@ -166,7 +166,7 @@ vim.opt.guicursor = {
 }
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 3
 
 -- Your custom indentation settings
 vim.o.tabstop = 4
