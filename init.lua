@@ -965,8 +965,8 @@ require('lazy').setup({
           -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
           -- vim.wo.foldmethod = 'expr'
 
-          -- enables treesitter based indentation
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          -- Keep Neovim's filetype indent scripts. nvim-treesitter indentation
+          -- is experimental and overrides reliable built-in indent behavior.
         end,
       })
     end,
